@@ -6,11 +6,11 @@
   :resource-paths ["native"]
   :plugins [[lein-expectations "0.0.8"]]
 
-  :dependencies [[org.clojure/clojure "1.8.0-alpha4"]
+  :dependencies [[org.clojure/clojure "1.8.0-alpha5"]
                  [slingshot "0.12.2"]
                  [org.jblas/jblas "1.2.3"]
-                 [net.mikera/core.matrix "0.36.1"]]
+                 [net.mikera/core.matrix "0.40.0"]]
   
   :profiles {:dev {:dependencies [[criterium/criterium "0.4.3"]
-                                  [net.mikera/core.matrix.testing "0.0.4"]
-                                  [expectations "2.1.1"]]}})
+                                  [net.mikera/core.matrix "0.40.0" :type "test-jar"]
+                                  [expectations "2.1.3"]]}})
