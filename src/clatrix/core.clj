@@ -1642,9 +1642,10 @@ Uses the same algorithm as java's default Random constructor."
   mp/PSliceSeq
   ;; API wants a seq of Vectors
   (get-major-slice-seq [m]
-    (clojure.core/map #(mp/get-major-slice-view m %) (range (nrows m))))
+    (clojure.core/mapv #(slice-row m %) (range (nrows m))))
   
   mp/PSliceView
+    ;; not really optimal for Clatrix since we need to use a wrapper.
     (get-major-slice-view [m i] 
       (clojure.core.matrix.impl.wrappers/wrap-slice m i))
 
